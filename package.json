@@ -1,0 +1,13 @@
+{
+  "name": "d04-rest-service",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Minimal dependency-free HTTP router for Node.js services.",
+  "exports": "./src/index.js",
+  "scripts": {
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
