@@ -1,0 +1,2 @@
+import test from "node:test"; import assert from "node:assert/strict"; import { createRouter } from "../src/index.js";
+test("matches parameterized routes",async()=>{const router=createRouter();let found;router.get("/users/:id",(req,res)=>{found=req.params.id;res.writeHead(200);res.end("ok");});const req={method:"GET",url:"/users/42",headers:{}};const res={headersSent:false,writableEnded:false,writeHead(){this.headersSent=true;},end(){this.writableEnded=true;}};await router.handle(req,res);assert.equal(found,"42");assert.equal(res.writableEnded,true);});
